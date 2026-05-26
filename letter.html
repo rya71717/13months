@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Letter ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="card large-card">
+      <p class="small-text">A Letter For You</p>
+
+      <h1>To My Tiara ❤️</h1>
+
+      <p class="message">
+        I wanted to make this because 13 months with you means a lot to me.
+        You have made my life feel warmer, happier, and more meaningful.
+      </p>
+
+      <p class="message">
+        I love the way you care and the way you do things you dont enjoy sometimes just because you know I like it such as calling me.  
+        I feel lucky to have you in my life and I never take you for granted. Thank you for being you. Thank you for loving me, supporting me, and making
+        these 13 months so special. I hope this is just one small memory in a much bigger story and I wanted to say that I love you. 
+      </p>
+
+      <p class="message">
+        I also wanted to say that I'm so proud of you for being so hardworking and even if you don't think so, I think you're the smartest and most beautiful girl. 
+        I recently promised you that I would tell you everything but I'm honestly scared to make you upset because you might break up with me. 
+        I want to tell you everything and ofc you can tell me everything because I won't break up with you but I'm not sure if you'll break up with me or not.
+        Anyways, hopefully your internet comes back and fully works soon because I can't wait to do all the things I want to do with you such as sending you TikToks, reels, playing CR and steam games, watching movies, drawing together etc.
+        Doing those things make me feel closer to you and I love spending time with you
+      </p>
+
+      <div class="gift-box">
+        <h2>Your gift</h2>
+        <p>
+          Click the button below to reveal it!
+        </p>
+
+        <button onclick="revealCode()" class="button">Reveal Gift</button>
+
+        <p id="giftCode" class="gift-code hidden">
+          Ask your boyfriend 😁
+        </p>
+
+      </div>
+
+      <a href="index.html" class="back-link">← Back to the first page</a>
+    </div>
+  </div>
+
+  <script>
+    function revealCode() {
+      const code = document.getElementById("giftCode");
+      code.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
