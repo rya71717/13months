@@ -216,38 +216,143 @@ body:has(.large-card)::after {
     30% 80%;
 }
 
-/* Mobile: reduce flowers so they don't cover the note */
+/* Mobile: make sure flowers stay around the card, not on top of it */
 @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .page {
-    padding: 20px;
+    padding: 18px;
+    align-items: center;
   }
 
   .card {
-    padding: 28px;
+    padding: 26px 22px;
+    width: 100%;
+    max-width: 94vw;
+    border-radius: 22px;
+  }
+
+  .large-card {
+    max-width: 94vw;
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 31px;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .small-text {
+    font-size: 13px;
+    letter-spacing: 1.5px;
   }
 
   .message {
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+
+  .gift-box {
+    padding: 20px;
+  }
+
+  .gift-box p {
+    font-size: 16px;
   }
 
   .gift-code {
-    font-size: 18px;
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  /*
+    On phones, the flowers are decorative only.
+    They stay at the far left/right edges and fade a bit
+    so they don't block the letter/card.
+  */
+  body::before,
+  body::after {
+    width: 18vw;
+    opacity: 0.5;
+  }
+
+  body:not(:has(.large-card))::before {
+    background-size: 70px auto, 60px auto, 65px auto;
+    background-position:
+      -15px 8%,
+      -22px 52%,
+      4px 82%;
+  }
+
+  body:not(:has(.large-card))::after {
+    background-size: 70px auto, 60px auto, 65px auto;
+    background-position:
+      calc(100% - 55px) 8%,
+      calc(100% - 45px) 52%,
+      calc(100% - 70px) 82%;
+  }
+
+  body:has(.large-card)::before {
+    background-size: 75px auto, 65px auto, 70px auto;
+    background-position:
+      -18px 7%,
+      -25px 48%,
+      0px 83%;
+  }
+
+  body:has(.large-card)::after {
+    background-size: 75px auto, 65px auto, 70px auto;
+    background-position:
+      calc(100% - 58px) 7%,
+      calc(100% - 48px) 48%,
+      calc(100% - 72px) 83%;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 430px) {
+  .card {
+    max-width: 96vw;
+    padding: 24px 18px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .message {
+    font-size: 16px;
   }
 
   body::before,
   body::after {
-    width: 22vw;
-    opacity: 0.45;
+    width: 14vw;
+    opacity: 0.35;
   }
 
   body:not(:has(.large-card))::before,
+  body:has(.large-card)::before {
+    background-position:
+      -35px 8%,
+      -38px 50%,
+      -25px 83%;
+  }
+
   body:not(:has(.large-card))::after,
-  body:has(.large-card)::before,
   body:has(.large-card)::after {
-    background-size: 80px auto, 70px auto, 75px auto;
+    background-position:
+      calc(100% - 35px) 8%,
+      calc(100% - 32px) 50%,
+      calc(100% - 42px) 83%;
   }
 }
